@@ -1,5 +1,7 @@
 # ApiAsyncTask
 
+> Author: Darwin E. Castillo D. E-Mail: darwin.c5@gmail.com
+
 ## How to
 
 To get a Git project into your build:
