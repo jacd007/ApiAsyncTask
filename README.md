@@ -84,13 +84,17 @@ apiTask.setTaskComplete((response -> {
 apiTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,null);
  ```
  #### Method
->Get 	 "GET"   
+#### Get 	 
+"GET"   
 
->Post	 "POST"	
+#### Post	 
+"POST"	
 
->Put	 "PUT" 	
+#### Put	 
+"PUT" 	
 
->Delete   "DELETE"   
+#### Delete   
+"DELETE"   
 
 
  
