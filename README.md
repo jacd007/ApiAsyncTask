@@ -43,7 +43,7 @@ To get a Git project into your build:
 #### Gradle
 ```
  	dependencies {
-	        implementation 'com.github.jacd007:DateLibrary:1.0.0'
+	        implementation 'com.github.jacd007:ApiAsyncTask:Tag'
 	}
  ```
  
@@ -51,19 +51,19 @@ To get a Git project into your build:
  ```
  	<dependency>
 	    <groupId>com.github.jacd007</groupId>
-	    <artifactId>DateLibrary</artifactId>
-	    <version>1.0.0</version>
+	    <artifactId>ApiAsyncTask</artifactId>
+	    <version>Tag</version>
 	</dependency>
  ```
  #### sbt
  
  ```
-    libraryDependencies += "com.github.jacd007" % "DateLibrary" % "1.0.0"	
+    libraryDependencies += "com.github.jacd007" % "ApiAsyncTask" % "Tag"	
  ```
  
  #### leiningen
  
  ```
-    :dependencies [[com.github.jacd007/DateLibrary "1.0.0"]]	
+    :dependencies [[com.github.jacd007/ApiAsyncTask "Tag"]]	
  ``` 
- > New Version from 1.0.0 to 1.0.0.1
+ > New Version from 0.1
