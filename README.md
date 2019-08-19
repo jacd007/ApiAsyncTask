@@ -68,4 +68,20 @@ To get a Git project into your build:
  ```
     :dependencies [[com.github.jacd007/ApiAsyncTask "Tag"]]	
  ``` 
+ ### Step 3. Get Started
+  ```
+ 	ApiTask apiTask = new ApiTask(getContext());
+	apiTasl.setUrl("https://your-url.com");
+        apiTask.setEndpoint("your/enpoint");
+        apiTask.setMethod("Method");
+        apiTask.setShownProgress(true);
+        apiTask.setProgressMessage("Set Message");
+        apiTask.setTaskComplete((response -> {
+		//Code response from Api
+        }));
+
+        apiTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,null);
+ ```
+ 
+ 
  > New Version from 0.1
