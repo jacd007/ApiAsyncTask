@@ -85,13 +85,9 @@ apiTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,null);
  ```
  #### Method
 	| 	value	|
--------------------------
 Get 	| 	"GET"   |
--------------------------
 Post	| 	"POST"	|
--------------------------
 Put	| 	"PUT" 	|
--------------------------
 Delete  |    "DELETE"   |
 
  
