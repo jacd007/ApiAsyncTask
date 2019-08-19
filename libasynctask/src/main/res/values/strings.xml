@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LibAsyncTask</string>
+    <string name="shared_key">_shared_key</string>
+    <string name="url_api_auth">http://www.example.com:3000/api/</string>
+</resources>
