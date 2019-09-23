@@ -26,8 +26,15 @@ public class ApiTask extends AsyncTask<String, String, String> {
     private String progressMessage;
     private boolean isShownProgress;
     private String body;
-    private String url;
+    private String url; // custom url
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public ApiTask(Context context) {
         this.context = context;
@@ -39,11 +46,31 @@ public class ApiTask extends AsyncTask<String, String, String> {
 
     }
 
+
+    /**
+     * if url == null, get it url base, else get all url and ignore endpoint
+     * @param message
+     * @param endpoint
+     * @param url
+     */
+
+    public void Get(String message, String endpoint, String url) {
+        this.url = url;
+        this.endpoint = endpoint;
+        this.isShownProgress = true;
+        this.progressMessage = message;
+        method = "GET";
+
+
+        executeOnExecutor(THREAD_POOL_EXECUTOR,null);
+
+    }
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         if (isShownProgress) {
-//            dialog.show();
+            dialog.show();
 
             dialog.setMessage(progressMessage);
             dialog.setIndeterminate(true);
@@ -56,14 +83,16 @@ public class ApiTask extends AsyncTask<String, String, String> {
         if (method != null) {
 
             String resp = "";
+            String url = this.url != null ? this.url : context.getString(R.string.url_api_auth) + endpoint;
+
             if (method.toUpperCase().equals("GET"))
-                resp = call.callGet(url + endpoint + "");
+                resp = call.callGet(url + "");
             else if (method.toUpperCase().equals("POST"))
-                resp = call.callPost(url + endpoint, body);
+                resp = call.callPost(url + "", body);
             else if (method.toUpperCase().equals("PUT"))
-                resp = call.callPut(url + endpoint, body);
+                resp = call.callPut(url + "", body);
             else if (method.toUpperCase().equals("DELETE"))
-                resp = call.callDelete(url + endpoint);
+                resp = call.callDelete(url + "");
 
             return resp;
         } else
@@ -136,13 +165,10 @@ public class ApiTask extends AsyncTask<String, String, String> {
         this.taskComplete = taskComplete;
     }
 
-    public String getUrl() {
-        return url;
-    }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
 }
+
+
+
 
 
