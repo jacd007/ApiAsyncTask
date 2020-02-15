@@ -83,7 +83,7 @@ public class ApiTask extends AsyncTask<String, String, String> {
         if (method != null) {
 
             String resp = "";
-            String url = this.url != null ? this.url : context.getString(R.string.url_api_auth) + endpoint;
+            String url = this.url != null ? this.url + endpoint: context.getString(R.string.url_api_auth) + endpoint;
 
             if (method.toUpperCase().equals("GET"))
                 resp = call.callGet(url + "");
